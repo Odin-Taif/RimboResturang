@@ -1,0 +1,45 @@
+import Link from "next/link";
+import Menu from "./Menu";
+import Image from "next/image";
+import SearchBar from "./SearchBar";
+import dynamic from "next/dynamic";
+// import NavIcons from "./NavIcons";
+
+const NavIcons = dynamic(() => import("./NavIcons"), { ssr: false });
+
+const Navbar = () => {
+  return (
+    <div className="h-20 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 bg-black text-orange-400 relative">
+      {/* MOBILE */}
+      <div className="h-full flex items-center justify-between md:hidden">
+        <Link href="/">
+          <div className="text-2xl tracking-wide">Levantisk</div>
+        </Link>
+        <Menu />
+      </div>
+      {/* BIGGER SCREENS */}
+      <div className="hidden md:flex items-center justify-between gap-8 h-full">
+        <Link href="/" className="flex items-center gap-3">
+          <Image src="/logo.svg" alt="" width={24} height={24} />
+          <div className="text-2xl text-white tracking-wide">Rimbo</div>
+        </Link>
+        {/* RIGHT */}
+        {/* <div className="w-2/3 xl:w-1/2 flex items-center justify-between gap-8">
+          <SearchBar />
+          <NavIcons />
+        </div> */}
+        {/* LEFT */}
+        <div className="w-1/3 xl:w-1/2 flex items-right gap-12">
+          <div className="hidden text-xl xl:flex gap-10">
+            <Link href="/">Homepage</Link>
+            <Link href="/">Menu</Link>
+            <Link href="/">About</Link>
+            <Link href="/">Contact</Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Navbar;
