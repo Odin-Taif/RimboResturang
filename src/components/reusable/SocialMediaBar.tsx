@@ -1,5 +1,13 @@
 import Link from "next/link";
 import { FunctionComponent } from "react";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedin,
+  FaMailBulk,
+  FaMobileAlt,
+  FaTiktok,
+} from "react-icons/fa";
 
 interface SocialMediaItem {
   name: string;
@@ -8,15 +16,41 @@ interface SocialMediaItem {
   target: string;
 }
 
-interface SocialMediaBarProps {
-  socialmedia: SocialMediaItem[];
-}
+// Array containing social media and contact information
 
-const SocialMediaBar: FunctionComponent<SocialMediaBarProps> = ({
-  socialmedia,
-}) => {
+// interface SocialMediaBarProps {
+//   socialmedia: SocialMediaItem[];
+// }
+
+const SocialMediaBar: FunctionComponent = () => {
+  const socialmedia = [
+    {
+      name: "Instagram",
+      icon: <FaInstagram />,
+      href: "https://www.instagram.com/",
+      target: "_blank",
+    },
+    {
+      name: "TikTok",
+      icon: <FaTiktok />,
+      href: "https://www.tiktok.com/@",
+      target: "_blank",
+    },
+    {
+      name: "Facebook",
+      icon: <FaFacebookF />,
+      href: "https://www.facebook.com/",
+      target: "_blank",
+    },
+    {
+      name: "mailto",
+      icon: <FaMailBulk />,
+      href: "mailto:info@evomina.com",
+      target: "_blank",
+    },
+  ];
   return (
-    <div className="flex flex-wrap text-center lg:text-left">
+    <div className="w-full flex items-center text-center justify-center  bg-orange-200">
       {/* Social media icons container */}
       <div className="flex flex-row mt-6 lg:mb-0">
         {socialmedia &&
@@ -24,7 +58,7 @@ const SocialMediaBar: FunctionComponent<SocialMediaBarProps> = ({
             <Link
               key={item.name}
               href={item.href}
-              className="flex items-start justify-center p-2 md:m-2 text-black shadow-lg font-normal h-10 w-10 rounded-full outline-none focus:outline-none hover:bg-yellow-500"
+              className="flex items-center justify-center p-2 md:m-2 text-white shadow-lg font-normal h-10 w-10 rounded-full outline-none focus:outline-none bg-black hover:bg-yellow-500"
             >
               {item.icon}
             </Link>

@@ -56,7 +56,7 @@ const Slider = () => {
             key={slide.id}
           >
             {/* TEXT CONTAINER */}
-            <div className="h-1/2 xl:w-2/3 xl:h-full flex flex-col items-center justify-center gap-8 2xl:gap-12 text-center">
+            <div className="h-1/2 xl:w-1/2 xl:h-full flex flex-col items-center justify-center gap-8 2xl:gap-12 text-center">
               {/* Text Container */}
               <div className="text-center  mt-4">
                 {/* <div className="text-4xl font-semibold">
@@ -76,11 +76,10 @@ const Slider = () => {
             <div className="h-1/2 xl:w-2/3 xl:h-full relative">
               <Image
                 src={slide.img}
-                alt=""
-                fill
-                className="object-cover"
-                style={{ objectFit: "contain" }} // Ensure the image covers the div without distortion
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" // Responsive image sizing
+                alt="Background with spices"
+                layout="fill"
+                objectFit="cover"
+                quality={100}
               />
             </div>
           </div>

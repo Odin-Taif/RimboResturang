@@ -2,6 +2,8 @@
 
 import CategoryList from "@/components/CategoryList";
 import ProductList from "@/components/ProductList";
+import Reservation from "@/components/Reservation";
+import SocialMediaBar from "@/components/reusable/SocialMediaBar";
 import Skeleton from "@/components/Skeleton";
 import Slider from "@/components/Slider";
 import { WixClientContext } from "@/context/wixContext";
@@ -36,6 +38,8 @@ const HomePage = async () => {
     <>
       <Slider />
       <CategoryList />
+      <SocialMediaBar />
+      <Reservation />
     </>
   );
 };
