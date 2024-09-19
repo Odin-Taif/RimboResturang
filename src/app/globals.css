@@ -6,6 +6,10 @@
   display: none;
 }
 
-.scrollbar-hide{
+.scrollbar-hide {
   scrollbar-width: none;
+}
+
+body {
+  @apply bg-black text-white;
 }

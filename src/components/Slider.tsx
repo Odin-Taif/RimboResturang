@@ -3,6 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { Heading } from "./reusable";
+import Container from "./reusable/Container";
 
 const slides = [
   {
@@ -43,7 +45,7 @@ const Slider = () => {
   // }, []);
 
   return (
-    <div className="h-[calc(100vh-80px)]  text-orange-400 overflow-hidden">
+    <div className="h-[calc(80vh-80px)]  overflow-hidden">
       <div
         className="w-max h-full flex transition-all ease-in-out duration-1000"
         style={{ transform: `translateX(-${current * 100}vw)` }}
@@ -54,17 +56,19 @@ const Slider = () => {
             key={slide.id}
           >
             {/* TEXT CONTAINER */}
-            <div className="h-1/2 xl:w-1/3 xl:h-full flex flex-col items-center justify-center gap-8 2xl:gap-12 text-left xl:ml-20 pl-1  xl:border-l-2 border-white">
-              <h1 className="text-5xl lg:text-6xl 2xl:text-6xl font-semibold">
-                {slide.title}
-              </h1>
-              <h2 className="text-xl lg:text-3xl 2xl:text-4xl">
-                {slide.description}
-              </h2>
-
+            <div className="h-1/2 xl:w-2/3 xl:h-full flex flex-col items-center justify-center gap-8 2xl:gap-12 text-center">
+              {/* Text Container */}
+              <div className="text-center  mt-4">
+                {/* <div className="text-4xl font-semibold">
+                  <span className="text-orange-500"></span> Rimbo
+                </div> */}
+                <h1 className="text-5xl font-bold">
+                  Pizza <span className="text-orange-500">Rimbo</span>
+                </h1>
+              </div>
               <Link href={slide.url}>
-                <button className="rounded-md bg-orange-400 text-white py-6 px-10">
-                  Order Now
+                <button className="px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white rounded">
+                  Order Online Now
                 </button>
               </Link>
             </div>
@@ -74,14 +78,15 @@ const Slider = () => {
                 src={slide.img}
                 alt=""
                 fill
-                sizes="100%"
                 className="object-cover"
+                style={{ objectFit: "contain" }} // Ensure the image covers the div without distortion
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" // Responsive image sizing
               />
             </div>
           </div>
         ))}
       </div>
-      <div className="absolute m-auto left-1/2 bottom-8 flex gap-4">
+      <div className="relative m-auto left-1/2 bottom-4 flex gap-4">
         {slides.map((slide, index) => (
           <div
             className={`w-3 h-3  rounded-full ring-1 ring-gray-600 cursor-pointer flex items-center justify-center ${
