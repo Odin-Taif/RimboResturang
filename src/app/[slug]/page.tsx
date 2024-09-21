@@ -31,7 +31,7 @@ const SinglePage = async ({ params }: { params: { slug: string } }) => {
         <h1 className="text-4xl font-medium">{product.name}</h1>
         <p className="text-gray-500">{product.description}</p>
         <div className="h-[2px] bg-gray-100" />
-        {product.price?.price === product.price?.discountedPrice ? (
+        {/* {product.price?.price === product.price?.discountedPrice ? (
           <h2 className="font-medium text-2xl">${product.price?.price}</h2>
         ) : (
           <div className="flex items-center gap-4">
@@ -42,7 +42,7 @@ const SinglePage = async ({ params }: { params: { slug: string } }) => {
               ${product.price?.discountedPrice}
             </h2>
           </div>
-        )}
+        )} */}
         <div className="h-[2px] bg-gray-100" />
         {product.variants && product.productOptions ? (
           <CustomizeProducts
@@ -66,10 +66,10 @@ const SinglePage = async ({ params }: { params: { slug: string } }) => {
         ))}
         <div className="h-[2px] bg-gray-100" />
         {/* REVIEWS */}
-        <h1 className="text-2xl">User Reviews</h1>
+        {/* <h1 className="text-2xl">User Reviews</h1>
         <Suspense fallback="Loading...">
           <Reviews productId={product._id!} />
-        </Suspense>
+        </Suspense> */}
       </div>
     </div>
   );

@@ -106,7 +106,7 @@ const Contact: FC = () => {
                   register={register}
                   errors={errors}
                   // validate={handleNameValidation}
-                  required
+                  // required
                 />
                 {errors.firstName?.message && (
                   <small className="text-rose-500 px-3 ">
@@ -119,7 +119,7 @@ const Contact: FC = () => {
                   disabled={isLoading}
                   register={register}
                   errors={errors}
-                  required
+                  // required
                   // validate={handleEmailValidation}
                 />
                 {/* error email handling */}
@@ -134,7 +134,7 @@ const Contact: FC = () => {
                   disabled={isLoading}
                   register={register}
                   errors={errors}
-                  required
+                  // required
                   // validate={handlePhoneNumberValidation}
                 />
                 {errors.phoneNumber?.message && (

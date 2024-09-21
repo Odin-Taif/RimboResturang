@@ -135,13 +135,13 @@ const LoginPage = () => {
       <form className="flex flex-col gap-8" onSubmit={handleSubmit}>
         <h1 className="text-2xl font-semibold">{formTitle}</h1>
         {mode === MODE.REGISTER ? (
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 ">
             <label className="text-sm text-gray-700">Username</label>
             <input
               type="text"
               name="username"
               placeholder="john"
-              className="ring-2 ring-gray-300 rounded-md p-4"
+              className="ring-2 ring-gray-300 text-black  rounded-md p-4"
               onChange={(e) => setUsername(e.target.value)}
             />
           </div>
@@ -153,7 +153,7 @@ const LoginPage = () => {
               type="email"
               name="email"
               placeholder="john@gmail.com"
-              className="ring-2 ring-gray-300 rounded-md p-4"
+              className="ring-2 ring-gray-300 rounded-md p-4 text-black"
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
@@ -164,7 +164,7 @@ const LoginPage = () => {
               type="text"
               name="emailCode"
               placeholder="Code"
-              className="ring-2 ring-gray-300 rounded-md p-4"
+              className="ring-2 ring-gray-300 rounded-md p-4 text-black"
               onChange={(e) => setEmailCode(e.target.value)}
             />
           </div>
@@ -176,7 +176,7 @@ const LoginPage = () => {
               type="password"
               name="password"
               placeholder="Enter your password"
-              className="ring-2 ring-gray-300 rounded-md p-4"
+              className="ring-2 ring-gray-300 rounded-md p-4 text-black"
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
