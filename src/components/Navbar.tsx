@@ -18,7 +18,7 @@ const Navbar = () => {
 
     {
       name: "Menu",
-      href: "/menu",
+      href: "/list?cat=all-products",
     },
 
     {

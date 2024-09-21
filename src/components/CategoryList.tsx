@@ -1,12 +1,13 @@
 import { wixClientServer } from "@/lib/wixClientServer";
 import Image from "next/image";
 import Link from "next/link";
-import { Heading } from "./reusable";
 import Container from "./reusable/Container";
 
 const CategoryList = async () => {
   const wixClient = await wixClientServer();
   const cats = await wixClient.collections.queryCollections().find();
+  // console.log(cats.items.map((item) => item.media));
+
   // console.log(cats);
 
   const slide = {

@@ -50,7 +50,7 @@ const SocialMediaBar: FunctionComponent = () => {
     },
   ];
   return (
-    <div className="w-full flex items-center text-center justify-center bg-orange-200 border-t-4 border-orange-400">
+    <div className="w-full flex items-center text-center justify-center  border-t-2 border-orange-400">
       {/* Social media icons container */}
       <div className="flex flex-row m-2">
         {socialmedia &&
@@ -58,7 +58,7 @@ const SocialMediaBar: FunctionComponent = () => {
             <Link
               key={item.name}
               href={item.href}
-              className="flex items-center justify-center p-2 m-2 text-white shadow-lg font-normal h-10 w-10 rounded-full outline-none focus:outline-none bg-black hover:bg-yellow-500"
+              className="flex items-center justify-center p-2 m-2 text-black shadow-lg font-normal h-10 w-10 rounded-full outline-none focus:outline-none bg-white hover:bg-yellow-500"
             >
               {item.icon}
             </Link>

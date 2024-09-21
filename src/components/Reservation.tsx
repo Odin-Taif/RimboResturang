@@ -68,7 +68,7 @@ const Contact: FC = () => {
   return (
     <>
       <Container>
-        <section className=" py-2 lg:py-[120px] overflow-hidden relative z-1">
+        <section className=" py-2 overflow-hidden relative z-1">
           <div className="flex flex-wrap mx-4 lg:justify-between">
             {/* Left side for the image and background */}
 
@@ -97,7 +97,7 @@ const Contact: FC = () => {
               </div>
             </div>
 
-            <div className="w-full px-auto lg:w-1/2 xl:w-5/12 bg-orange-200 text-black">
+            <div className="w-full px-auto lg:w-1/2 xl:w-5/12 bg-orange-100 text-black">
               <div className="relative p-2 rounded-lg shadow-lg sm:p-12">
                 <Input
                   id="name"
