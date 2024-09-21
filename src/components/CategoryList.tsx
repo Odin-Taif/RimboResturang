@@ -12,16 +12,16 @@ const CategoryList = async () => {
 
   return (
     <Container>
-      <section className="grid grid-cols-4 md:grid-cols-4 mx-auto h-fit gap-6">
+      <section className="grid grid-cols-4 md:grid-cols-4 mx-auto h-fit gap-2">
         {/* Left Section: Image and Text */}
         <div className="relative md:col-span-2 col-span-4 h-auto flex flex-col justify-center items-center gap-6">
           {/* Text Container */}
-          <div className="text-center  mt-4">
+          <div className="text-center mt-4">
             <div className="text-4xl font-semibold">
               <span className="text-orange-500">Pizza</span> Of The Month
             </div>
             <h1 className="text-5xl font-bold">
-              The Big <span className="text-orange-500">BIRD</span>
+              Rimbo <span className="text-orange-500">Special</span>
             </h1>
           </div>
           {/* Image Container */}
@@ -38,19 +38,30 @@ const CategoryList = async () => {
         </div>
         {/* Right Section: Menu and Buttons */}
         <div className="flex flex-col md:col-span-2 col-span-4 items-center justify-center space-y-8">
-          <ul className="pl-3 border-l-2 border-orange-400">
+          <div className="grid grid-cols-2 pl-3 border-l-2 border-orange-400">
             {cats.items.map((item) => (
               <Link
                 href={`/list?cat=${item.slug}`}
                 className="w-full"
                 key={item._id}
               >
-                <li className="text-lg m-2 font-semibold text-white hover:text-orange-400">
-                  {item.name}
-                </li>
+                <div className="flex flex-col justify-center items-center">
+                  <div className="relative w-20 h-20 rounded-md">
+                    <Image
+                      src={item.media?.mainMedia?.image?.url || "/product.png"}
+                      alt=""
+                      fill
+                      sizes="10vw"
+                      className="absolute object-cover rounded-md z-10 transition-opacity easy duration-500"
+                    />
+                  </div>
+                  <p className="text-md m-2  text-white hover:text-orange-400">
+                    {item.name}
+                  </p>
+                </div>
               </Link>
             ))}
-          </ul>
+          </div>
 
           {/* Buttons */}
           <div className="flex space-x-4 pt-6">
