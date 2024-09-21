@@ -10,15 +10,6 @@ const CategoryList = async () => {
 
   // console.log(cats);
 
-  const slide = {
-    id: 1,
-    title: "Rimbo Resturang!",
-    description: "People disapoints, pizza is eternal.",
-    img: "/hands-taking.png",
-    url: "/",
-    bg: "bg-gradient-to-r from-black to-black",
-  };
-
   return (
     <Container>
       <section className="grid grid-cols-4 md:grid-cols-4 mx-auto h-fit gap-6">

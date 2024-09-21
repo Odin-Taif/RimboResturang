@@ -7,9 +7,9 @@ import Reservation from "@/components/Reservation";
 import SocialMediaBar from "@/components/reusable/SocialMediaBar";
 import Skeleton from "@/components/Skeleton";
 import Slider from "@/components/Slider";
-import { WixClientContext } from "@/context/wixContext";
-import { useWixClient } from "@/hooks/useWixClient";
-import { wixClientServer } from "@/lib/wixClientServer";
+// import { WixClientContext } from "@/context/wixContext";
+// import { useWixClient } from "@/hooks/useWixClient";
+// import { wixClientServer } from "@/lib/wixClientServer";
 import { Suspense } from "react";
 
 const HomePage = async () => {
@@ -38,9 +38,9 @@ const HomePage = async () => {
   return (
     <>
       <Slider />
-      {/* <Suspense fallback={<Skeleton />}>
+      <Suspense fallback={<Skeleton />}>
         <CategoryList />
-      </Suspense> */}
+      </Suspense>
       <Delivery />
       <SocialMediaBar />
       <Reservation />
