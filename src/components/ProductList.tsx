@@ -63,17 +63,8 @@ const ProductList = async ({
               alt=""
               fill
               sizes="25vw"
-              className="absolute object-cover rounded-md z-10 hover:opacity-0 transition-opacity easy duration-500"
+              className="absolute object-cover rounded-md z-10  transition-opacity easy duration-500"
             />
-            {product.media?.items && (
-              <Image
-                src={product.media?.items[1]?.image?.url || "/product.png"}
-                alt=""
-                fill
-                sizes="25vw"
-                className="absolute object-cover rounded-md"
-              />
-            )}
           </div>
           <div className="flex justify-between">
             <span className="font-medium">{product.name}</span>
@@ -91,8 +82,8 @@ const ProductList = async ({
               }}
             ></div>
           )}
-          <button className="rounded-2xl ring-1 ring-lama text-lama w-max py-2 px-4 text-xs hover:bg-lama hover:text-white">
-            Add to Cart
+          <button className="rounded ring-1 ring-orange-400 text-white w-max py-2 px-4 text-xs hover:bg-orange-400 hover:text-white">
+            Add+
           </button>
         </Link>
       ))}
