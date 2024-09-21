@@ -4,8 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import DOMPurify from "isomorphic-dompurify";
 import Pagination from "./Pagination";
+import LoadMore from "./Loadmore";
 
-const PRODUCT_PER_PAGE = 8;
+const PRODUCT_PER_PAGE = 12;
 
 const ProductList = async ({
   categoryId,
@@ -17,17 +18,10 @@ const ProductList = async ({
   searchParams?: any;
 }) => {
   const wixClient = await wixClientServer();
-
   const productQuery = wixClient.products
     .queryProducts()
     .startsWith("name", searchParams?.name || "")
     .eq("collectionIds", categoryId)
-    .hasSome(
-      "productType",
-      searchParams?.type ? [searchParams.type] : ["physical", "digital"]
-    )
-    .gt("priceData.price", searchParams?.min || 0)
-    .lt("priceData.price", searchParams?.max || 999999)
     .limit(limit || PRODUCT_PER_PAGE)
     .skip(
       searchParams?.page
@@ -50,7 +44,7 @@ const ProductList = async ({
   const res = await productQuery.find();
 
   return (
-    <div className="mt-12 flex gap-x-8 gap-y-16 justify-between flex-wrap">
+    <div className="mt-8 flex gap-x-8 gap-y-10 justify-between flex-wrap">
       {res.items.map((product: products.Product) => (
         <Link
           href={"/" + product.slug}
@@ -62,7 +56,7 @@ const ProductList = async ({
               src={product.media?.mainMedia?.image?.url || "/product.png"}
               alt=""
               fill
-              sizes="25vw"
+              sizes="20vw"
               className="absolute object-cover rounded-md z-10  transition-opacity easy duration-500"
             />
           </div>

@@ -15,13 +15,13 @@ const ListPage = async ({ searchParams }: { searchParams: any }) => {
   return (
     <div className="px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 relative">
       {/* CAMPAIGN */}
-      <div className="hidden bg-pink-50 px-4 sm:flex justify-between h-64">
-        <div className="w-2/3 flex flex-col items-center justify-center gap-8">
-          <h1 className="text-4xl font-semibold leading-[48px] text-gray-700">
-            Bara för 139 SEK
-            <br /> Få en stor pizza!
+      <div className="hidden bg-orange-50 px-4 sm:flex justify-between h-40">
+        <div className="w-2/3 flex flex-col items-center justify-center gap-4">
+          <h1 className="text-2xl font-semibold leading-[48px] text-gray-700">
+            Bara för <span className="text-red-400 text-3xl">139 SEK</span> och
+            Få en stor pizza!
           </h1>
-          <button className="rounded-3xl bg-lama text-white w-max py-3 px-5 text-sm">
+          <button className="rounded-3xl bg-orange-400 hover:bg-orange-300 text-white w-max py-1 px-5 text-sm">
             Beställa Nu!
           </button>
         </div>

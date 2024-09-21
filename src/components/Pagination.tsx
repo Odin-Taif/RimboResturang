@@ -22,20 +22,20 @@ const Pagination = ({
   };
 
   return (
-    <div className="mt-12 flex justify-between w-full">
+    <div className="mt-8 flex flex-row w-full space-x-5  justify-center items-center">
       <button
-        className="rounded-md bg-lama text-white p-2 text-sm w-24 cursor-pointer disabled:cursor-not-allowed disabled:bg-pink-200"
+        className="rounded-md bg-orange-400 text-black p-2 text-sm w-24 cursor-pointer disabled:cursor-not-allowed disabled:bg-gray-100"
         disabled={!hasPrev}
         onClick={() => createPageUrl(currentPage - 1)}
       >
-        Previous
+        {"<Previous"}
       </button>
       <button
-        className="rounded-md bg-lama text-white p-2 text-sm w-24 cursor-pointer disabled:cursor-not-allowed disabled:bg-pink-200"
+        className="rounded-md bg-orange-200 text-black p-2 text-sm w-24 cursor-pointer disabled:cursor-not-allowed disabled:bg-gray-100"
         disabled={!hasNext}
         onClick={() => createPageUrl(currentPage + 1)}
       >
-        Next
+        {"Next>"}
       </button>
     </div>
   );
