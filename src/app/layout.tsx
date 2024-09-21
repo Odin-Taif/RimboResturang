@@ -23,7 +23,7 @@ export default function RootLayout({
         <WixClientContextProvider>
           <Navbar />
           {children}
-          {/* <Footer /> */}
+          <Footer />
         </WixClientContextProvider>
       </body>
     </html>

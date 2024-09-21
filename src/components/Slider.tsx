@@ -11,7 +11,7 @@ const slides = [
     id: 1,
     title: "Rimbo Resturang!",
     description: "People disapoints, pizza is eternal.",
-    img: "/homepage.svg",
+    img: "/burger2.png",
     url: "/",
     bg: "bg-gradient-to-r from-black to-black",
   },
@@ -45,7 +45,7 @@ const Slider = () => {
   // }, []);
 
   return (
-    <div className="h-[calc(80vh-80px)]  overflow-hidden">
+    <div className="h-[calc(60vh-60px)] overflow-hidden">
       <div
         className="w-max h-full flex transition-all ease-in-out duration-1000"
         style={{ transform: `translateX(-${current * 100}vw)` }}
@@ -56,14 +56,23 @@ const Slider = () => {
             key={slide.id}
           >
             {/* TEXT CONTAINER */}
-            <div className="h-1/2 xl:w-1/2 xl:h-full flex flex-col items-center justify-center gap-8 2xl:gap-12 text-center">
+            <div className="h-1/2 xl:w-1/2 xl:h-full flex flex-col items-center justify-center gap-6 2xl:gap-6 text-center">
+              {/* IMAGE CONTAINER */}
+              <div className="h-2/4 xl:w-2/3 xl:h-2/4 relative">
+                <Image
+                  src={slide.img}
+                  alt="Background with spices"
+                  layout="fill"
+                  objectFit="contain"
+                  quality={100}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="select-none"
+                />
+              </div>
               {/* Text Container */}
-              <div className="text-center  mt-4">
-                {/* <div className="text-4xl font-semibold">
-                  <span className="text-orange-500"></span> Rimbo
-                </div> */}
+              <div className="text-center">
                 <h1 className="text-5xl font-bold">
-                  Pizza <span className="text-orange-500">Rimbo</span>
+                  Pizza <span className="text-orange-500">Rimboträffan</span>
                 </h1>
               </div>
               <Link href={slide.url}>
@@ -72,30 +81,33 @@ const Slider = () => {
                 </button>
               </Link>
             </div>
+
             {/* IMAGE CONTAINER */}
             <div className="h-1/2 xl:w-2/3 xl:h-full relative">
               <Image
-                src={slide.img}
+                src="/hands-taking.png"
                 alt="Background with spices"
                 layout="fill"
-                objectFit="cover"
+                objectFit="contain"
                 quality={100}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="select-none"
               />
             </div>
           </div>
         ))}
       </div>
-      <div className="relative m-auto left-1/2 bottom-4 flex gap-4">
+      <div className="relative m-auto left-1/2 bottom-10 flex gap-4">
         {slides.map((slide, index) => (
           <div
-            className={`w-3 h-3  rounded-full ring-1 ring-gray-600 cursor-pointer flex items-center justify-center ${
+            className={`w-4 h-4  rounded-full ring-1 ring-orange-200 cursor-pointer flex items-center justify-center ${
               current === index ? "scale-150" : ""
             }`}
             key={slide.id}
             onClick={() => setCurrent(index)}
           >
             {current === index && (
-              <div className="w-[6px] h-[6px] bg-gray-600 rounded-full"></div>
+              <div className="w-[6px] h-[6px] bg-white rounded-full"></div>
             )}
           </div>
         ))}

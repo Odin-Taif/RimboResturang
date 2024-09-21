@@ -7,6 +7,8 @@ import Container from "./reusable/Container";
 const CategoryList = async () => {
   const wixClient = await wixClientServer();
   const cats = await wixClient.collections.queryCollections().find();
+  // console.log(cats);
+
   const slide = {
     id: 1,
     title: "Rimbo Resturang!",
@@ -33,26 +35,30 @@ const CategoryList = async () => {
           {/* Image Container */}
           <div className="w-full h-80 relative">
             <Image
-              src="/hands-taking.png"
+              src="/burger1.png"
               layout="fill" // Ensure the image fills its container
               objectFit="contain" // Make sure the image fits without distortion
               alt="About Us Image"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="rounded-md"
+              className="select-none"
             />
           </div>
         </div>
         {/* Right Section: Menu and Buttons */}
-        <div className=" flex flex-col md:col-span-2 col-span-4 items-center justify-center space-y-8">
-          {/* Menu List */}
-          <ol className="text-xl text-white space-y-4 pl-2 border-l-4 border-orange-400">
-            <li>Meat Pizza</li>
-            <li>Margarita Pizza</li>
-            <li>Hawaiian Pizza</li>
-            <li>Pepperoni Pizza</li>
-            <li>Veggie Pizza</li>
-            <li>Cheese Pizza</li>
-          </ol>
+        <div className="flex flex-col md:col-span-2 col-span-4 items-center justify-center space-y-8">
+          <ul className="pl-3 border-l-2 border-orange-400">
+            {cats.items.map((item) => (
+              <Link
+                href={`/list?cat=${item.slug}`}
+                className="w-full"
+                key={item._id}
+              >
+                <li className="text-lg m-2 font-semibold text-white hover:text-orange-400">
+                  {item.name}
+                </li>
+              </Link>
+            ))}
+          </ul>
 
           {/* Buttons */}
           <div className="flex space-x-4 pt-6">
