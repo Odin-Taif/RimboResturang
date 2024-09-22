@@ -31,7 +31,7 @@ const Pagination = ({
         {"<Previous"}
       </button>
       <button
-        className="rounded-md bg-orange-200 text-black p-2 text-sm w-24 cursor-pointer disabled:cursor-not-allowed disabled:bg-gray-100"
+        className="rounded-md bg-orange-200 hover:bg-orange-300 text-black p-2 text-sm w-24 cursor-pointer disabled:cursor-not-allowed disabled:bg-gray-100"
         disabled={!hasNext}
         onClick={() => createPageUrl(currentPage + 1)}
       >

@@ -6,7 +6,7 @@ import DOMPurify from "isomorphic-dompurify";
 import Pagination from "./Pagination";
 import LoadMore from "./Loadmore";
 
-const PRODUCT_PER_PAGE = 12;
+const PRODUCT_PER_PAGE = 10;
 
 const ProductList = async ({
   categoryId,
@@ -56,7 +56,8 @@ const ProductList = async ({
             <Image
               src={product.media?.mainMedia?.image?.url || "/product.png"}
               alt=""
-              fill
+              fill // Replaces layout="fill"
+              style={{ objectFit: "cover" }} // Replaces objectFit="cover"
               sizes="20vw"
               className="absolute object-cover rounded-md z-10  transition-opacity easy duration-500"
             />

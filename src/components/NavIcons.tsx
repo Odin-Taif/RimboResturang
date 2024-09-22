@@ -74,9 +74,9 @@ const NavIcons = () => {
         />
       </div>
       {isProfileOpen && (
-        <div className="absolute p-4 rounded-md top-12 left-0 bg-white hover:bg-orange-400 text-sm shadow-[0_3px_10px_rgb(0,0,0,0.2)] z-20">
-          <Link href="/profile">Profile</Link>
-          <div className="mt-2 cursor-pointer" onClick={handleLogout}>
+        <div className="absolute px-4 py-2 rounded-md top-12 left-0 bg-white hover:bg-gray-100 text-sm shadow-[0_3px_10px_rgb(0,0,0,0.2)] z-20">
+          {/* <Link href="/profile">Profile</Link> */}
+          <div className="mt-2 cursor-pointer " onClick={handleLogout}>
             {isLoading ? "Logging out" : "Logout"}
           </div>
         </div>
