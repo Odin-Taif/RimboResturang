@@ -24,7 +24,7 @@ const Pagination = ({
   return (
     <div className="mt-8 flex flex-row w-full space-x-5  justify-center items-center">
       <button
-        className="rounded-md bg-orange-400 text-black p-2 text-sm w-24 cursor-pointer disabled:cursor-not-allowed disabled:bg-gray-100"
+        className="rounded-md bg-orange-400 hover:bg-orange-200 text-black p-2 text-sm w-24 cursor-pointer disabled:cursor-not-allowed disabled:bg-gray-100"
         disabled={!hasPrev}
         onClick={() => createPageUrl(currentPage - 1)}
       >

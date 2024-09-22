@@ -12,24 +12,28 @@ const Delivery: FC = () => {
       <Container>
         <section className="grid grid-cols-1 md:grid-cols-4 mx-auto gap-6">
           <div className="md:col-span-2 col-span-1 flex flex-col items-center justify-center space-y-8">
-            <h1 className="text-lg font-bold text-orange-500"></h1>
+            <h1 className="text-lg font-bold text-orange-400"></h1>
             <div className="text-4xl font-semibold">
-              <span className="text-orange-500"> Your Favorite Burger </span> On
+              <span className="text-orange-400"> Your Favorite Burger </span> On
               the Way!
             </div>
 
             <ul className="flex flex-col space-y-4">
               <li className="flex items-center">
-                <MdOutlineDeliveryDining size={35} className="mr-2" /> Delivery
-                in 30 minutes
+                <MdOutlineDeliveryDining
+                  size={45}
+                  color="orange"
+                  className="mr-4"
+                />
+                Delivery in 30 minutes
               </li>
               <li className="flex items-center">
-                <FaHamburger size={30} className="mr-2" /> Free shipping from
-                200SEK
+                <FaHamburger size={40} className="mr-4" color="orange" /> Free
+                shipping from 200SEK
               </li>
               <li className="flex items-center">
-                <FaDoorOpen size={30} className="mr-2" /> Delivery on your
-                Doorstep
+                <FaDoorOpen size={40} className="mr-4" color="orange" />{" "}
+                Delivery on your Doorstep
               </li>
             </ul>
           </div>

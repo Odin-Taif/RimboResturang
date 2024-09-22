@@ -20,11 +20,6 @@ const Navbar = () => {
       name: "Menu",
       href: "/list?cat=all-products",
     },
-
-    {
-      name: "Contact",
-      href: "/contact",
-    },
   ];
 
   return (
