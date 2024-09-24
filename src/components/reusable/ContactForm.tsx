@@ -59,7 +59,7 @@ function ContactForm() {
     //   });
   };
   return (
-    <div className="relative p-4 w-2/3 rounded-lg shadow-lg sm:p-8 bg-orange-50">
+    <div className="relative p-4 w-full md:w-2/3 rounded-lg shadow-lg sm:p-8 bg-orange-50">
       <Input
         id="name"
         label="Full Name"

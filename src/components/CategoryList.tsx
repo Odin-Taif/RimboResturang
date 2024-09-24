@@ -2,6 +2,7 @@ import { wixClientServer } from "@/lib/wixClientServer";
 import Image from "next/image";
 import Link from "next/link";
 import Container from "./reusable/Container";
+import { Heading } from "./reusable";
 
 const CategoryList = async () => {
   const wixClient = await wixClientServer();
@@ -38,6 +39,7 @@ const CategoryList = async () => {
         </div>
         {/* Right Section: Menu and Buttons */}
         <div className="flex flex-col md:col-span-2 col-span-4 items-center justify-center space-y-8">
+          <Heading title={"Vår meny | "} center />
           <div className="grid grid-cols-2 pl-3 border-l-2 border-orange-400">
             {cats.items.map((item) => (
               <Link

@@ -39,7 +39,7 @@ const Contact: FC = () => {
           </div>
 
           {/* Right Side for Contact Form */}
-          <div className="flex flex-col md:col-span-2 col-span-4 items-center justify-center space-y-8 bg-black text-black">
+          <div className="flex flex-col col-span-4 md:col-span-2 items-center justify-center space-y-8 bg-black text-black">
             <ContactForm />
           </div>
         </section>

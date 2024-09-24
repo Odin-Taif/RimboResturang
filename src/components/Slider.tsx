@@ -71,8 +71,9 @@ const Slider = () => {
               </div>
               {/* Text Container */}
               <div className="text-center">
-                <h1 className="text-5xl font-bold">
-                  Pizza <span className="text-orange-500">Rimboträffan</span>
+                <h1 className="text-xl md:text-4xl font-bold">
+                  Resturang
+                  <span className="text-orange-500">Rimboträffan</span>
                 </h1>
               </div>
               <Link href={slide.url}>

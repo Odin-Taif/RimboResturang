@@ -1,7 +1,7 @@
+"use client";
 import Link from "next/link";
 import Menu from "./Menu";
 import Image from "next/image";
-import SearchBar from "./SearchBar";
 import dynamic from "next/dynamic";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
@@ -10,6 +10,8 @@ import { usePathname } from "next/navigation";
 const NavIcons = dynamic(() => import("./NavIcons"), { ssr: false });
 
 const Navbar = () => {
+  const pathname = usePathname();
+
   const links = [
     {
       name: "Hem",
@@ -18,7 +20,7 @@ const Navbar = () => {
 
     {
       name: "Menu",
-      href: "/list?cat=all-products",
+      href: "/list",
     },
   ];
 
@@ -37,22 +39,24 @@ const Navbar = () => {
           <Image src="/logo.svg" alt="|" width={50} height={50} />
           <div className="text-lg text-white tracking-wide">Rimboträffan</div>
         </Link>
-        {/* RIGHT */}
 
         {/* LEFT */}
         <div className="w-1/3 xl:w-1/2 flex items-center justify-center gap-12">
           <div className="hidden text-xl xl:flex gap-10">
-            {links.map((link) => {
-              return (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className={"text-orange-400 hover:text-white"}
-                >
-                  <p className="hidden md:block"> | {link.name}</p>
-                </Link>
-              );
-            })}
+            {links.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className={clsx(
+                  "flex h-[48px] mx-2 grow items-center justify-center gap-2 rounded-md p-3 text-sm font-medium hover:text-orange-100 active:text-orange-100 md:flex-none md:justify-start md:p-2 md:px-3",
+                  {
+                    "text-orange-100": pathname === link.href, // Active link style
+                  }
+                )}
+              >
+                <p className="hidden md:block"> | {link.name}</p>
+              </Link>
+            ))}
           </div>
         </div>
         <div className="w-1/4 xl:w-1/4 flex items-center justify-center gap-8">

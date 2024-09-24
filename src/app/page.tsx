@@ -2,6 +2,7 @@
 
 import CategoryList from "@/components/CategoryList";
 import Delivery from "@/components/Delievery";
+import PopularList from "@/components/PopularList";
 // import ProductList from "@/components/ProductList";
 import Reservation from "@/components/Reservation";
 import SocialMediaBar from "@/components/reusable/SocialMediaBar";
@@ -38,6 +39,7 @@ const HomePage = async () => {
   return (
     <>
       <Slider />
+      <PopularList />
       <Suspense fallback={<Skeleton />}>
         <CategoryList />
       </Suspense>

@@ -6,7 +6,7 @@ import DOMPurify from "isomorphic-dompurify";
 import Pagination from "./Pagination";
 import LoadMore from "./Loadmore";
 
-const PRODUCT_PER_PAGE = 10;
+const PRODUCT_PER_PAGE = 8;
 
 const ProductList = async ({
   categoryId,
