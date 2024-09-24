@@ -59,14 +59,14 @@ const Slider = () => {
             <div className="h-1/2 xl:w-1/2 xl:h-full flex flex-col items-center justify-center gap-6 2xl:gap-6 text-center">
               {/* IMAGE CONTAINER */}
               <div className="h-2/4 xl:w-2/3 xl:h-2/4 relative">
+                {/* Set a height for the container */}
                 <Image
                   src={slide.img}
                   alt="Background with spices"
-                  layout="fill"
-                  objectFit="contain"
+                  fill // Use fill to allow the image to cover the container
                   quality={100}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="select-none"
+                  className="object-contain select-none" // Use object-contain for CSS styling
                 />
               </div>
               {/* Text Container */}
@@ -88,11 +88,10 @@ const Slider = () => {
               <Image
                 src="/hands-taking.png"
                 alt="Background with spices"
-                layout="fill"
-                objectFit="contain"
+                fill
                 quality={100}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="select-none"
+                className="object-contain select-none"
               />
             </div>
           </div>

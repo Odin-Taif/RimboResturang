@@ -28,9 +28,9 @@ const ListPage = async ({ searchParams }: { searchParams: any }) => {
         <div className="relative w-1/3">
           <Image
             src="/pizza-ria.png"
-            alt=""
-            fill
-            sizes=""
+            alt="Delicious pizza" // Always include an appropriate alt text
+            fill // Makes the image fill the parent container
+            sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw" // Responsive image sizes
             className="object-contain"
           />
         </div>

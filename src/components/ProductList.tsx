@@ -56,12 +56,12 @@ const ProductList = async ({
             <Image
               src={product.media?.mainMedia?.image?.url || "/product.png"}
               alt=""
-              fill // Replaces layout="fill"
-              style={{ objectFit: "cover" }} // Replaces objectFit="cover"
+              fill // Use fill to make the image cover the container
               sizes="20vw"
-              className="absolute object-cover rounded-md z-10  transition-opacity easy duration-500"
+              className="absolute object-cover rounded-md z-10 transition-opacity duration-500" // Use CSS for object-fit
             />
           </div>
+
           <div className="flex justify-between">
             <span className="font-medium">{product.name}</span>
             <span className="font-semibold">SEK{product.price?.price}</span>

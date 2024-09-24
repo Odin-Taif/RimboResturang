@@ -29,11 +29,10 @@ const Contact: FC = () => {
             <div className="w-full h-80 relative flex justify-center items-center">
               <Image
                 src="/reserv.svg"
-                layout="fill" // Ensure the image fills its container
-                objectFit="contain" // Make sure the image fits without distortion
+                fill // Ensure the image fills its container
                 alt="Reservation Image"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="select-none"
+                className="select-none object-contain"
               />
             </div>
           </div>

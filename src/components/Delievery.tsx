@@ -37,16 +37,14 @@ const Delivery: FC = () => {
               </li>
             </ul>
           </div>
-          <div className="md:col-span-2 col-span-1 relative">
+          <div className="md:col-span-2 col-span-1 relative w-full h-60">
+            {/* Set a height for the container */}
             <Image
               src="/delivery.svg"
-              layout="responsive" // Ensure the image is responsive
-              width={800} // Adjust width and height as per your image dimensions
-              height={600}
-              objectFit="contain" // Make sure the image fits without distortion
+              fill // This allows the image to fill the parent container
               alt="About Us Image"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="select-none"
+              className="select-none object-contain" // Use CSS for object fit
             />
           </div>
         </section>

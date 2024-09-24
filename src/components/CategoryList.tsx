@@ -29,11 +29,10 @@ const CategoryList = async () => {
           <div className="w-full h-80 relative">
             <Image
               src="/burger1.png"
-              layout="fill" // Ensure the image fills its container
-              objectFit="contain" // Make sure the image fits without distortion
+              fill
               alt="About Us Image"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="select-none"
+              className="select-none object-contain"
             />
           </div>
         </div>
@@ -43,7 +42,7 @@ const CategoryList = async () => {
           <div className="grid grid-cols-2 pl-3 border-l-2 border-orange-400">
             {cats.items.map((item) => (
               <Link
-                href={`/list?cat=${item.slug}`}
+                href={`/menu?cat=${item.slug}`}
                 className="w-full"
                 key={item._id}
               >

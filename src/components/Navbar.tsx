@@ -20,7 +20,7 @@ const Navbar = () => {
 
     {
       name: "Menu",
-      href: "/list",
+      href: "/menu",
     },
   ];
 
@@ -36,7 +36,16 @@ const Navbar = () => {
       {/* BIGGER SCREENS */}
       <div className="hidden md:flex items-center justify-between gap-2 h-full">
         <Link href="/" className="flex items-center gap-3">
-          <Image src="/logo.svg" alt="|" width={50} height={50} />
+          <div className="relative w-12 h-12">
+            {" "}
+            {/* Set the container size */}
+            <Image
+              src="/logo.svg"
+              alt="Logo"
+              fill // Use fill to allow the image to cover the container
+              className="object-contain" // Use CSS for object-fit
+            />
+          </div>
           <div className="text-lg text-white tracking-wide">Rimboträffan</div>
         </Link>
 
@@ -61,7 +70,7 @@ const Navbar = () => {
         </div>
         <div className="w-1/4 xl:w-1/4 flex items-center justify-center gap-8">
           {/* <SearchBar /> */}
-          <NavIcons />
+          {/* <NavIcons /> */}
         </div>
       </div>
     </div>
