@@ -3,6 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { BsChevronCompactUp } from "react-icons/bs";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const Menu = () => {
   const [open, setOpen] = useState(false);
@@ -27,42 +29,51 @@ const Menu = () => {
     },
 
     {
-      name: "Shop",
-      href: "/shop",
-    },
-    {
       name: "Logout",
       href: "/logout",
     },
   ];
 
   return (
-    <div className="">
-      <Image
-        src="/menu.png"
-        alt=""
-        width={28}
-        height={28}
-        className="cursor-pointer bg-orange-400"
-        onClick={() => setOpen((prev) => !prev)}
-      />
-      {open && (
-        <div className="absolute bg-black text-white left-0 top-20 w-full h-[calc(100vh-80px)] flex flex-col items-center justify-center gap-8 text-xl  z-10">
+    <>
+      {/* mobile nav */}
+      <div className="flex items-center justify-end md:justify-between relative z-50">
+        {/* Toggle Button */}
+        <span
+          onClick={() => setOpen((prev) => !prev)}
+          className="p-[9px] bg-gray-100 rounded-full md:hidden cursor-pointer fixed top-4 right-4 z-50"
+        >
+          <GiHamburgerMenu
+            size={25}
+            className={`transition-transform ease-in duration-150 ${
+              open ? "rotate-180" : "rotate-0"
+            }`}
+          />
+        </span>
+      </div>
+
+      {/* Slide-in Mobile Menu */}
+      <div
+        className={`md:hidden bg-gray-200 fixed top-0 left-0 right-0 z-40 transition-all duration-300 ease-in-out ${
+          open ? "pb-4 px-5 opacity-100 visible" : "h-0 invisible opacity-0"
+        }`}
+      >
+        <div className="flex flex-col text-[15px] pt-10 opacity-75 px-2 justify-center items-center">
           {links &&
             links.map((link) => {
               return (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-orange-400"
+                  className="text-lg text-orange-400 py-2"
                 >
                   <p>{link.name}</p>
                 </Link>
               );
             })}
         </div>
-      )}
-    </div>
+      </div>
+    </>
   );
 };
 
