@@ -8,31 +8,18 @@ import { GiHamburgerMenu } from "react-icons/gi";
 
 const Menu = () => {
   const [open, setOpen] = useState(false);
+
   const links = [
-    {
-      name: "Hem",
-      href: "/",
-    },
-
-    {
-      name: "Menu",
-      href: "/menu",
-    },
-
-    {
-      name: "Contact",
-      href: "/contact",
-    },
-    {
-      name: "Cart(1)",
-      href: "/cart",
-    },
-
-    {
-      name: "Logout",
-      href: "/logout",
-    },
+    { name: "Hem", href: "/" },
+    { name: "Menu", href: "/menu" },
+    { name: "Contact", href: "/contact" },
+    { name: "Cart(1)", href: "/cart" },
+    { name: "Logout", href: "/logout" },
   ];
+
+  const handleLinkClick = () => {
+    setOpen(false); // Close the menu when a link is clicked
+  };
 
   return (
     <>
@@ -59,18 +46,16 @@ const Menu = () => {
         }`}
       >
         <div className="flex flex-col text-[15px] pt-10 opacity-75 px-2 justify-center items-center">
-          {links &&
-            links.map((link) => {
-              return (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className="text-lg text-orange-400 py-2"
-                >
-                  <p>{link.name}</p>
-                </Link>
-              );
-            })}
+          {links.map((link) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              className="text-lg text-orange-400 py-2"
+              onClick={handleLinkClick} // Close the menu on link click
+            >
+              <p>{link.name}</p>
+            </Link>
+          ))}
         </div>
       </div>
     </>

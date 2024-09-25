@@ -54,11 +54,12 @@ const Navbar = () => {
                 className={clsx(
                   "flex h-[48px] mx-2 grow items-center justify-center gap-2 rounded-md p-3 text-sm font-medium hover:text-orange-100 active:text-orange-100 md:flex-none md:justify-start md:p-2 md:px-3",
                   {
-                    "text-orange-100": pathname === link.href, // Active link style
+                    "text-orange-100 underline underline-offset-8":
+                      pathname === link.href, // Active link style
                   }
                 )}
               >
-                <p className="hidden md:block"> | {link.name}</p>
+                <p className="hidden text-lg md:block"> {link.name}</p>
               </Link>
             ))}
           </div>
